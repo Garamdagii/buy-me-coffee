@@ -1,5 +1,5 @@
-import { Logo } from "@/components/logo";
-import { LayoutImage } from "./components";
+import { LogInButton, Logo } from "@/components";
+import { LayoutImage } from "../../components/sign-up/layoutImage";
 
 export default function SignUpLayout({
   children,
@@ -9,7 +9,7 @@ export default function SignUpLayout({
   return (
     <div className="flex w-screen h-screen">
       <Logo />
-      <div className="flex w-1/2 h-full bg-amber-400">
+      <div className="flex justify-center items-center w-1/2 h-full bg-amber-400">
         <LayoutImage />
       </div>
       <div className="flex justify-center items-center w-1/2 h-full">

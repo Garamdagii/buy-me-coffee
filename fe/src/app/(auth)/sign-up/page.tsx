@@ -1,9 +1,14 @@
-import { CreateUsername } from "../components";
+import { CreateUser, LogInButton, Logo } from "@/components";
+import { LogIn } from "lucide-react";
 
 const SignUpPage = () => {
   return (
     <div>
-      <CreateUsername />
+      <div className="flex absolute top-[32px] right-[80px]">
+        <LogInButton isLogin={false} />
+      </div>
+
+      <CreateUser />
     </div>
   );
 };

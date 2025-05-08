@@ -1,5 +1,4 @@
-import { LogInButton, Logo } from "@/components";
-import { LayoutImage } from "../../components/sign-up/layoutImage";
+import { LayoutImage, Logo } from "@/components";
 
 export default function SignUpLayout({
   children,

@@ -1,17 +1,20 @@
 import express, { json } from "express";
 import cors from "cors";
 import { userRouter } from "./routes/user";
+import { profileRouter } from "./routes/profile";
 
 const app = express();
 const port = 8000;
 
-// app.get("/", (req, res) => {
-//   res.send("hello");
-// });
 app.use(json());
 app.use(cors());
 
-app.use("/", userRouter);
+// app.get("/", (req, res) => {
+//   res.send("hello");
+// });
+
+app.use("/user", userRouter);
+app.use("/profile", profileRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);

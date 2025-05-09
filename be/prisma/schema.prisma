@@ -14,10 +14,10 @@ datasource db {
 model User {
   id        Int     @id @default(autoincrement())
   email     String  @unique
-  name      String
+  userName      String
   password  String
-  createdAt	      DateTime
-  updatedAt	      DateTime
+  createdAt	      DateTime @default(now())
+  updatedAt	      DateTime @default(now()) @updatedAt
 }
 
 model Profile {
@@ -29,6 +29,7 @@ model Profile {
   backgroundImage	String
   successMessage	String
   userId	        Int
-  createdAt	      DateTime
-  updatedAt	      DateTime
+  createdAt	      DateTime @default(now())
+  updatedAt	      DateTime @default(now()) @updatedAt
 }
+

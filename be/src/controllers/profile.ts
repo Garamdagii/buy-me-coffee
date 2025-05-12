@@ -23,13 +23,13 @@ export const createProfile = async (req: Request, res: Response) => {
         userId: userId,
       },
     });
-    return res.send({
+    return res.status(200).send({
       success: true,
       message: response,
     });
   } catch (error) {
     console.error(error, "err");
-    return res.send({
+    return res.status(500).send({
       success: false,
       message: error,
     });
@@ -39,13 +39,13 @@ export const createProfile = async (req: Request, res: Response) => {
 export const findProfile = async (_: never, res: Response) => {
   try {
     const response = await prisma.profile.findMany();
-    return res.send({
+    return res.status(200).send({
       success: true,
       message: response,
     });
   } catch (error) {
     console.error(error, "err");
-    return res.send({
+    return res.status(500).send({
       success: false,
       message: error,
     });
@@ -76,13 +76,13 @@ export const updateProfile = async (req: Request, res: Response) => {
         userId,
       },
     });
-    return res.send({
+    return res.status(200).send({
       success: true,
       message: response,
     });
   } catch (error) {
     console.error(error, "err");
-    return res.send({
+    return res.status(500).send({
       success: false,
       message: error,
     });
@@ -95,13 +95,13 @@ export const deleteProfile = async (req: Request, res: Response) => {
     const response = await prisma.profile.delete({
       where: { id: Number(id) },
     });
-    return res.send({
+    return res.status(200).send({
       success: true,
       message: response,
     });
   } catch (error) {
     console.error(error, "err");
-    return res.send({
+    return res.status(500).send({
       success: false,
       message: error,
     });

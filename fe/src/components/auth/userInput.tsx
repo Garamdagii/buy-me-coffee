@@ -40,10 +40,3 @@ export const UserInput = (data: Props) => {
     </div>
   );
 };
-
-// color: var(--text-text-muted-foreground, #71717A);
-// font-family: Inter;
-// font-size: 14px;
-// font-style: normal;
-// font-weight: 400;
-// line-height: 20px; /* 142.857% */

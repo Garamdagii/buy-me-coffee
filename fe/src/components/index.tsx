@@ -1,4 +1,3 @@
-export * from "./logo";
 export * from "./auth/createAccount";
 export * from "./auth/createUsername";
 export * from "./auth/layoutImage";
@@ -9,3 +8,4 @@ export * from "./ui/input";
 export * from "./ui/label";
 export * from "./ui/card";
 export * from "./loginButton";
+export * from "./logo";

@@ -1,18 +1,9 @@
-"use client";
-import { CreateAccount, LogInButton } from "@/components";
+import { CreateUsername } from "@/components";
 
-const LogInPage = () => {
-  const logInAccount = () => {
-    console.log("login");
-  };
+export const LogInPage = () => {
   return (
     <div>
-      <div className="flex absolute top-[32px] right-[80px]">
-        <LogInButton isLogin={true} />
-      </div>
-      <CreateAccount onClick={logInAccount} />
+      {/* <CreateUsername /> */}
     </div>
   );
 };
-
-export default LogInPage;

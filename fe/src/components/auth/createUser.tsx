@@ -22,26 +22,24 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "../ui/input";
+import { useState } from "react";
 
 const formSchema = z.object({
-  email: z
-    .string()
-    .min(8, { message: "Please enter at least 8 letters" })
-    .email("Please enter a valid email"),
-  password: z.string().min(4, { message: "Please enter at least 4 letters" }),
+  username: z
+    .string({ required_error: "Enter username" })
+    .min(4, { message: "Please enter at least 4 letters" }),
 });
 
-export const CreateAccount = ({ onClick }: { onClick: () => void }) => {
+export const CreateUsername = ({ onClick }: { onClick: () => void }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      username: "",
     },
   });
 
   const handleSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values.email);
+    console.log(values.username);
   };
 
   return (
@@ -60,34 +58,16 @@ export const CreateAccount = ({ onClick }: { onClick: () => void }) => {
             <CardContent>
               <FormField
                 control={form.control}
-                name="email"
+                name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel>Username</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="Enter your email here"
-                        type="email"
-                        {...field}
-                      />
+                      <Input placeholder="Enter username here" {...field} />
                     </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Password</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="Enter password here"
-                        type="password"
-                        {...field}
-                      />
-                    </FormControl>
+                    {/* <FormDescription>
+                      This is your public display name.
+                    </FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}

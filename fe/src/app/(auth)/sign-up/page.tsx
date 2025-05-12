@@ -1,12 +1,11 @@
-import { CreateUser, LogInButton } from "@/components";
+import { CreateUsername } from "@/components";
+import { SignUp } from "@/components/auth/signUp";
 
 const SignUpPage = () => {
   return (
     <div>
-      <div className="flex absolute top-[32px] right-[80px]">
-        <LogInButton isLogin={false} />
-      </div>
-      <CreateUser />
+      {/* <CreateUsername /> */}
+      <SignUp />
     </div>
   );
 };
